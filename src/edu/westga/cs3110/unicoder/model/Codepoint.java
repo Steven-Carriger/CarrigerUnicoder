@@ -61,6 +61,15 @@ public class Codepoint {
         }
     }
     
+    /**
+     * Returns the UTF-32 encoding of the codepoint as an 8-digit hexadecimal string.
+     *
+     * @return The UTF-32 encoding as an 8-digit hexadecimal string.
+     */
+    public String toUTF32() {
+        return String.format("%08X", this.codepoint);
+    }
+    
  /**
     * gets the current codepoint
     * @return the current codepoint
