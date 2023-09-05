@@ -1,6 +1,5 @@
 package edu.westga.cs3110.unicoder.tests.model.codepoint;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,7 @@ class TestConstructor {
 	@Test
     public void testConstructorValid() {
         Codepoint codepoint = new Codepoint("1F682");
-        assertEquals(0x1F682, codepoint.getCodepoint());
+        TestHelper.assertStringCaseInsensitiveEquals("1F682", codepoint.toUTF16());
     }
 
     @Test
