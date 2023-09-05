@@ -46,7 +46,37 @@ public class Codepoint {
         }
         return utf8Encoding.toString();
     }
+    
+    /**
+     * Returns the UTF-16 encoding of the codepoint as either a 4-digit or 8-digit hexadecimal string.
+     *
+     * @return The UTF-16 encoding as a 4-digit or 8-digit hexadecimal string.
+     */
+    public String toUTF16() {
+        String hexValue = Integer.toHexString(this.codepoint).toUpperCase();
+        if (this.codepoint <= 0xFFFF) {
+            return String.format("%04X", this.codepoint);
+        } else {
+            return hexValue;
+        }
+    }
+    
+ /**
+    * gets the current codepoint
+    * @return the current codepoint
+     */
+	public int getCodepoint() {
+		return this.codepoint;
+	}
 
+	/**
+	 * sets the current codepoint
+	 * @param codepoint the codepoint to be set to
+	 */
+	public void setCodepoint(int codepoint) {
+		this.codepoint = codepoint;
+	}
+	
     private void fourByteEncoder(StringBuilder utf8Encoding) {
         utf8Encoding.append(String.format("%02X", 0xF0 | ((this.codepoint >> 18) & 0x07)));
         utf8Encoding.append(String.format("%02X", 0x80 | ((this.codepoint >> 12) & 0x3F)));
@@ -63,21 +93,5 @@ public class Codepoint {
 	private void twoByteEncoding(StringBuilder utf8Encoding) {
 		utf8Encoding.append(String.format("%02X", 0xC0 | ((this.codepoint >> 6) & 0x1F)));
 		utf8Encoding.append(String.format("%02X", 0x80 | (this.codepoint & 0x3F)));
-	}
-    
- /**
-    * gets the current codepoint
-    * @return the current codepoint
-     */
-	public int getCodepoint() {
-		return this.codepoint;
-	}
-
-	/**
-	 * sets the current codepoint
-	 * @param codepoint the codepoint to be set to
-	 */
-	public void setCodepoint(int codepoint) {
-		this.codepoint = codepoint;
 	}
 }
