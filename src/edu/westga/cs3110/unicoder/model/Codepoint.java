@@ -11,9 +11,20 @@ public class Codepoint {
 
     /**
 	* Constructor for the codepoint object.
+	* @param hexCodepoint the hexCodePoint to become a codepoint
 	*/
-    public Codepoint() {
-    	this.codepoint = 0;
+    public Codepoint(String hexCodepoint) {
+        if (hexCodepoint == null || hexCodepoint.isEmpty()) {
+            throw new IllegalArgumentException("Invalid input: hexCodepoint cannot be empty or null");
+        }
+        try {
+            this.setCodepoint(Integer.parseUnsignedInt(hexCodepoint, 16));
+            if (this.getCodepoint() < 0 || this.getCodepoint() > 0x10FFFF) {
+                throw new IllegalArgumentException("Invalid codepoint: Out of range");
+            }
+        } catch (NumberFormatException exception) {
+            throw new IllegalArgumentException("Invalid input: hexCodepoint must be a valid hexadecimal string");
+        }
     }
     
  /**
