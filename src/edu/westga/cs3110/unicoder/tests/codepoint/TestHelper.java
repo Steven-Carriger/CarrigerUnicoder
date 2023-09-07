@@ -1,4 +1,4 @@
-package edu.westga.cs3110.unicoder.tests.model.codepoint;
+package edu.westga.cs3110.unicoder.tests.codepoint;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,4 +1,4 @@
-package edu.westga.cs3110.unicoder.tests.model.codepoint;
+package edu.westga.cs3110.unicoder.tests.codepoint;
 
 import org.junit.jupiter.api.Test;
 
