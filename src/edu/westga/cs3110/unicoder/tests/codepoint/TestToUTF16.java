@@ -4,7 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import edu.westga.cs3110.unicoder.model.Codepoint;
 
-class TestToUTF16 {
+/**
+ * Tests for the Codepoint method toUTF16
+ * 
+ * @version Fall 2023
+ * @author Craig Carriger
+ */
+public class TestToUTF16 {
 
     @Test
     public void testToUTF16() {

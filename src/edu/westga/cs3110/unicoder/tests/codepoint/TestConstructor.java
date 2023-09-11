@@ -6,7 +6,13 @@ import org.junit.jupiter.api.Test;
 
 import edu.westga.cs3110.unicoder.model.Codepoint;
 
-class TestConstructor {
+/**
+ * Tests for the Codepoint constructor
+ * 
+ * @version Fall 2023
+ * @author Craig Carriger
+ */
+public class TestConstructor {
 
 	@Test
     public void testConstructorValid() {
